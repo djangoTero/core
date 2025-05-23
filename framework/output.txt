@@ -1,0 +1,755 @@
+Project Path: dahao-template
+
+Source Tree:
+
+```txt
+dahao-template
+├── README.md
+├── constitution
+│   ├── manifest.yaml
+│   └── sections
+│       └── 01-preamble.yaml
+├── governance
+│   ├── members
+│   │   └── member-template.yaml
+│   ├── roles
+│   │   └── core-roles.yaml
+│   └── rules
+│       └── voting-rules.yaml
+├── proposals
+│   └── DIP-001.yaml
+├── terms
+│   ├── definitions
+│   │   └── governance-terms.yaml
+│   └── registry
+│       └── index.yaml
+└── tokens
+    └── economics.yaml
+
+```
+
+`dahao-template/README.md`:
+
+```md
+# DAHAO Template Repository
+
+This is the official template for DAHAO (Decentralized Autonomous Holographic Adaptive Organizations) - a YAML-based framework for DAO governance documentation.
+
+## 🏗️ Repository Structure
+
+```
+dahao-template/
+├── .github/workflows/     # CI/CD workflows for validation
+├── constitution/          # Foundational governance documents
+│   ├── manifest.yaml     # Main constitution index
+│   └── sections/         # Individual constitution sections
+├── terms/                # Terminology and definitions
+│   ├── definitions/      # Term definition files
+│   └── registry/         # Central term registry
+├── governance/           # Governance rules and structures
+│   ├── rules/           # Voting and decision rules
+│   ├── roles/           # Role definitions
+│   └── members/         # Member profiles
+├── tokens/              # Token economics configuration
+│   └── economics.yaml   # Tokenomics specification
+├── proposals/           # Governance proposals (DIPs)
+└── .dahao/             # DAHAO configuration
+    ├── config.yaml     # Repository configuration
+    └── version         # DAHAO version
+
+```
+
+## 🚀 Getting Started
+
+### 1. Fork this Template
+
+Click "Use this template" on GitHub to create your own DAHAO repository.
+
+### 2. Configure Your DAO
+
+Edit `.dahao/config.yaml` with your organization's details:
+
+```yaml
+organization:
+  name: Your DAO Name
+  chain: ethereum  # or polygon, arbitrum, etc.
+  multisig: "0xYourMultisigAddress"
+```
+
+### 3. Customize Constitution
+
+Modify `constitution/manifest.yaml` and add sections in `constitution/sections/`.
+
+### 4. Define Terms
+
+Add your DAO-specific terms in `terms/definitions/`.
+
+### 5. Set Governance Rules
+
+Configure voting rules, roles, and parameters in `governance/`.
+
+### 6. Configure Tokenomics
+
+Update `tokens/economics.yaml` with your token distribution and incentives.
+
+## 📝 File Formats
+
+### Constitution Section
+```yaml
+id: section-id
+version: 1.0.0
+title: Section Title
+content: |
+  Your constitution content here...
+metadata:
+  created: 2025-01-22T00:00:00Z
+  authors: [author-id]
+```
+
+### Term Definition
+```yaml
+term: Your Term
+definition: Clear definition of the term
+category: governance
+aliases: [alt-name]
+related_terms: [other-term]
+```
+
+### Governance Rule
+```yaml
+id: rule-id
+type: voting
+title: Rule Title
+rules:
+  - description: What the rule does
+    conditions: [when it applies]
+    actions: [what happens]
+parameters:
+  quorum: 0.10
+  threshold: 0.51
+```
+
+### Proposal
+```yaml
+id: DIP-XXX
+title: Proposal Title
+type: governance
+author: member-id
+description: What the proposal does
+status: draft
+```
+
+## 🔍 Validation
+
+The repository includes GitHub Actions workflows that:
+- Validate YAML syntax
+- Check schema compliance
+- Ensure required files exist
+- Verify cross-references
+
+Run validation locally:
+```bash
+# Install dependencies
+pip install pyyaml jsonschema
+
+# Validate structure
+python scripts/validate.py
+```
+
+## 📚 Schema Documentation
+
+Detailed schemas are available in `src/schemas/`:
+- `document-schema.yaml` - Constitution documents
+- `term-schema.yaml` - Term definitions
+- `governance-schema.yaml` - Governance rules
+- `member-schema.yaml` - Member profiles
+- `proposal-schema.yaml` - Proposals
+
+## 🤝 Contributing
+
+1. Create proposals in `proposals/` directory
+2. Submit PR with your changes
+3. Automated validation will run
+4. Community review and voting
+5. Merge after approval
+
+## 📦 Integration
+
+DAHAO integrates with:
+- **IPFS**: Decentralized storage
+- **Snapshot**: Off-chain voting
+- **Discord**: Community notifications
+- **Smart Contracts**: On-chain execution
+
+## 🔗 Resources
+
+- [DAHAO Documentation](https://dahao.org/docs)
+- [Schema Reference](https://dahao.org/schemas)
+- [Example DAOs](https://dahao.org/examples)
+- [Community Forum](https://forum.dahao.org)
+
+## 📄 License
+
+This template is released under the MIT License. Your DAO's content may have its own license.
+```
+
+`dahao-template/constitution/manifest.yaml`:
+
+```yaml
+id: example-dao-constitution
+version: 1.0.0
+title: Example DAO Constitution
+description: The foundational governance document for Example DAO
+
+sections:
+  - id: preamble
+    title: Preamble
+    content: |
+      We, the members of Example DAO, establish this constitution to create
+      a decentralized, transparent, and equitable governance framework that
+      empowers our community to achieve our collective goals.
+      
+  - id: principles
+    title: Core Principles
+    content: |
+      The DAO shall operate according to these fundamental principles:
+    subsections:
+      - id: transparency
+        title: Transparency
+        content: All decisions and operations shall be transparent and verifiable on-chain.
+      - id: inclusivity
+        title: Inclusivity
+        content: The DAO welcomes participation from all who share our values.
+      - id: decentralization
+        title: Decentralization
+        content: No single entity shall have unilateral control over the DAO.
+        
+  - id: membership
+    title: Membership
+    content: |
+      Membership in the DAO is open to all who meet the following criteria:
+    subsections:
+      - id: eligibility
+        title: Eligibility Requirements
+        content: Members must hold at least 100 DAO tokens and complete onboarding.
+      - id: rights
+        title: Member Rights
+        content: All members have the right to propose, vote, and participate in governance.
+      - id: responsibilities
+        title: Member Responsibilities
+        content: Members must act in good faith and in the best interests of the DAO.
+
+metadata:
+  created: 2025-01-22T00:00:00Z
+  modified: 2025-01-22T00:00:00Z
+  authors:
+    - founding-members
+  tags:
+    - constitution
+    - governance
+    - foundational
+```
+
+`dahao-template/constitution/sections/01-preamble.yaml`:
+
+```yaml
+id: preamble
+version: 1.0.0
+title: Preamble
+description: The foundational statement of purpose and intent
+
+content: |
+  # Preamble
+  
+  We, the members of Example DAO, united by our shared vision of decentralized 
+  governance and collective ownership, hereby establish this Constitution as the 
+  supreme governing document of our organization.
+  
+  ## Purpose
+  
+  This Constitution serves to:
+  
+  1. Define the fundamental principles that guide our actions
+  2. Establish clear governance processes and procedures
+  3. Protect the rights of all members
+  4. Ensure the long-term sustainability of our organization
+  5. Create mechanisms for peaceful evolution and adaptation
+  
+  ## Vision
+  
+  We envision a future where:
+  - Decision-making power is distributed fairly among all stakeholders
+  - Transparency and accountability are paramount
+  - Innovation and experimentation are encouraged
+  - The collective wisdom of our community drives progress
+  
+  ## Commitment
+  
+  By participating in this DAO, all members commit to:
+  - Upholding the principles set forth in this Constitution
+  - Acting in good faith for the benefit of the collective
+  - Respecting the rights and contributions of all members
+  - Continuously improving our governance systems
+
+metadata:
+  created: 2025-01-22T00:00:00Z
+  modified: 2025-01-22T00:00:00Z
+  ratified: 2025-01-22T00:00:00Z
+  authors:
+    - founding-committee
+```
+
+`dahao-template/governance/members/member-template.yaml`:
+
+```yaml
+# Template for member profiles
+# Copy this file and rename to: [member-address].yaml
+
+id: member-0x1234  # Replace with actual member ID
+address: "0x1234567890123456789012345678901234567890"  # Ethereum address
+ens: member.eth  # Optional ENS name
+
+roles:
+  - member
+  # Add additional roles as assigned
+
+permissions:
+  # Automatically derived from roles
+  # Additional special permissions can be listed here
+
+reputation:
+  score: 100
+  level: contributor
+  badges:
+    - early_adopter
+    - proposal_author
+
+participation:
+  proposals_created: 5
+  votes_cast: 42
+  attendance_rate: 0.85
+
+joined_date: 2025-01-22T00:00:00Z
+status: active
+
+metadata:
+  bio: "Passionate about decentralized governance and community building"
+  skills:
+    - governance
+    - smart-contracts
+    - community-management
+  timezone: UTC-5
+  contact:
+    discord: member#1234
+    telegram: "@member"
+    # email: optional
+```
+
+`dahao-template/governance/roles/core-roles.yaml`:
+
+```yaml
+- id: member
+  title: DAO Member
+  description: Basic membership role with voting rights
+  permissions:
+    - create_proposal
+    - vote
+    - delegate_vote
+    - view_treasury
+    - participate_discussion
+  requirements:
+    - Hold minimum 100 DAO tokens
+    - Complete onboarding process
+    - Agree to constitution
+  term: indefinite
+
+- id: steward
+  title: DAO Steward
+  description: Elected representative responsible for specific domains
+  permissions:
+    - member_permissions
+    - fast_track_proposal
+    - moderate_discussion
+    - allocate_budget
+  requirements:
+    - Active member for 6+ months
+    - Elected by community vote
+    - Domain expertise
+  term: 6 months
+  max_concurrent: 7
+
+- id: multisig_signer
+  title: Multisig Signer
+  description: Trusted member authorized to sign treasury transactions
+  permissions:
+    - sign_transactions
+    - view_pending_transactions
+    - propose_emergency_action
+  requirements:
+    - Active member for 12+ months
+    - Security clearance
+    - KYC completed
+    - Elected with 75% approval
+  term: 12 months
+  max_concurrent: 7
+
+- id: contributor
+  title: Active Contributor
+  description: Member actively contributing to DAO operations
+  permissions:
+    - member_permissions
+    - access_contributor_tools
+    - claim_bounties
+    - join_working_groups
+  requirements:
+    - Complete 3+ approved tasks
+    - Active participation
+  term: indefinite
+
+- id: moderator
+  title: Community Moderator
+  description: Maintains community standards and facilitates discussion
+  permissions:
+    - moderate_forums
+    - issue_warnings
+    - temporary_mute
+    - escalate_violations
+  requirements:
+    - Active member for 3+ months
+    - Complete moderator training
+    - Community nomination
+  term: 3 months
+```
+
+`dahao-template/governance/rules/voting-rules.yaml`:
+
+```yaml
+id: voting-rules
+type: voting
+title: Core Voting Rules
+description: Fundamental rules governing all voting processes in the DAO
+
+rules:
+  - id: one-token-one-vote
+    description: Each token represents one vote in governance decisions
+    conditions:
+      - Member holds valid DAO tokens
+      - Tokens are not locked or staked elsewhere
+    actions:
+      - Calculate voting power based on token balance
+      - Record vote on-chain
+    exceptions:
+      - Quadratic voting proposals use different calculation
+
+  - id: minimum-voting-period
+    description: All proposals must have a minimum voting period
+    conditions:
+      - Proposal is submitted for voting
+    actions:
+      - Set voting period based on proposal type
+      - Prevent early closure of voting
+    exceptions:
+      - Emergency proposals may have shortened periods
+
+  - id: vote-delegation
+    description: Members may delegate their voting power
+    conditions:
+      - Delegator holds tokens
+      - Delegate is an active member
+    actions:
+      - Transfer voting power to delegate
+      - Maintain delegation record
+    exceptions:
+      - Cannot delegate to multiple addresses
+      - Delegation can be revoked at any time
+
+parameters:
+  quorum: 0.10  # 10% participation required
+  threshold: 0.51  # 51% approval required
+  duration:
+    proposal: 3   # 3 days for proposal discussion
+    voting: 7     # 7 days for voting
+    execution: 2  # 2 days timelock for execution
+
+metadata:
+  created: 2025-01-22T00:00:00Z
+  modified: 2025-01-22T00:00:00Z
+  version: 1.0.0
+```
+
+`dahao-template/proposals/DIP-001.yaml`:
+
+```yaml
+id: DIP-001
+title: Establish Community Grant Program
+type: treasury
+author: member-0xabcd
+co_authors:
+  - member-0xef01
+description: |
+  This proposal establishes a quarterly community grant program to fund 
+  projects that advance the DAO's mission. The program will allocate 
+  2% of the treasury per quarter to support innovative initiatives.
+
+rationale: |
+  The DAO needs a structured way to support community projects. Currently,
+  funding requests are ad-hoc and lack clear evaluation criteria. This 
+  program will:
+  - Encourage innovation and participation
+  - Provide clear funding guidelines
+  - Ensure transparent allocation of resources
+  - Build a portfolio of community projects
+
+specification:
+  changes:
+    - type: add
+      target: governance/programs/grants
+      details:
+        program_name: Community Grants
+        budget_allocation: 0.02  # 2% of treasury per quarter
+        max_grant_size: 50000  # USD
+        min_grant_size: 1000
+        
+  implementation: |
+    1. Create grant application template
+    2. Form grant review committee (5 members)
+    3. Establish evaluation criteria
+    4. Deploy grant distribution contracts
+    5. Launch first funding round
+    
+  timeline:
+    - phase: Setup
+      duration: 14  # days
+      deliverables:
+        - Application template
+        - Review committee selection
+        - Smart contract deployment
+    - phase: Launch
+      duration: 7
+      deliverables:
+        - Program announcement
+        - Open applications
+    - phase: Ongoing
+      duration: 90  # quarterly cycles
+      deliverables:
+        - Grant distributions
+        - Progress reports
+
+impact:
+  economic: |
+    Allocates 2% of treasury quarterly (~$200k at current values).
+    Expected ROI through ecosystem growth and token utility.
+  governance: |
+    Creates new committee structure. Requires quarterly reporting
+    and community oversight.
+  technical: |
+    Requires new smart contracts for escrow and milestone-based
+    payments. Integration with existing treasury contracts.
+
+voting:
+  start_date: 2025-02-01T00:00:00Z
+  end_date: 2025-02-08T00:00:00Z
+  quorum_required: 0.04
+  threshold_required: 0.51
+
+status: discussion
+created_date: 2025-01-22T00:00:00Z
+updated_date: 2025-01-22T00:00:00Z
+discussion_link: https://forum.exampledao.org/t/dip-001-community-grants
+
+metadata:
+  tags:
+    - grants
+    - treasury
+    - community
+  priority: high
+  dependencies: []
+```
+
+`dahao-template/terms/definitions/governance-terms.yaml`:
+
+```yaml
+- term: Proposal
+  definition: A formal suggestion for change submitted by a member for community consideration
+  category: governance
+  aliases:
+    - DIP (DAO Improvement Proposal)
+    - Motion
+  related_terms:
+    - Voting
+    - Quorum
+    - Threshold
+  examples:
+    - "The member submitted a proposal to increase the treasury allocation"
+    - "DIP-042 proposes changes to the voting mechanism"
+
+- term: Quorum
+  definition: The minimum number of members required to participate for a vote to be valid
+  category: governance
+  related_terms:
+    - Voting
+    - Threshold
+    - Participation
+  examples:
+    - "The proposal failed to reach quorum with only 45% participation"
+
+- term: Multisig
+  definition: A wallet that requires multiple signatures to execute transactions
+  category: technical
+  aliases:
+    - Multi-signature wallet
+    - Safe
+  related_terms:
+    - Treasury
+    - Security
+    - Signers
+  examples:
+    - "The treasury is secured by a 4-of-7 multisig"
+
+- term: Delegation
+  definition: The act of assigning voting power to another member
+  category: governance
+  aliases:
+    - Vote delegation
+    - Proxy voting
+  related_terms:
+    - Voting Power
+    - Representative
+  examples:
+    - "Members can delegate their votes to subject matter experts"
+
+- term: Rage Quit
+  definition: The ability for members to exit the DAO with their proportional share of assets
+  category: economic
+  related_terms:
+    - Exit Rights
+    - Treasury
+    - Member Rights
+  examples:
+    - "The rage quit mechanism ensures members can exit if they disagree with decisions"
+```
+
+`dahao-template/terms/registry/index.yaml`:
+
+```yaml
+registry:
+  name: DAHAO Terms Registry
+  version: 1.0.0
+  description: Central registry of all defined terms in the DAO
+
+categories:
+  governance:
+    description: Terms related to governance processes and decision-making
+    count: 15
+  technical:
+    description: Technical terms and blockchain concepts
+    count: 12
+  economic:
+    description: Terms related to tokenomics and financial aspects
+    count: 8
+  legal:
+    description: Legal and compliance-related terms
+    count: 5
+  operational:
+    description: Day-to-day operational terms
+    count: 10
+
+sources:
+  - file: governance-terms.yaml
+    category: governance
+    terms: 15
+  - file: technical-terms.yaml
+    category: technical
+    terms: 12
+  - file: economic-terms.yaml
+    category: economic
+    terms: 8
+
+metadata:
+  last_updated: 2025-01-22T00:00:00Z
+  maintainers:
+    - governance-working-group
+```
+
+`dahao-template/tokens/economics.yaml`:
+
+```yaml
+token:
+  name: Example DAO Token
+  symbol: EXDAO
+  decimals: 18
+  type: ERC20
+  contract_address: "0x0000000000000000000000000000000000000000"
+  chain_id: 1  # Ethereum mainnet
+
+supply:
+  total: 1000000000  # 1 billion tokens
+  circulating: 250000000  # 250 million
+  locked: 750000000  # 750 million
+
+distribution:
+  community_treasury: 0.40  # 40%
+  team: 0.20  # 20%
+  investors: 0.15  # 15%
+  ecosystem_growth: 0.15  # 15%
+  liquidity: 0.10  # 10%
+
+vesting:
+  team:
+    cliff_months: 12
+    vesting_months: 36
+    initial_release: 0.0
+  investors:
+    cliff_months: 6
+    vesting_months: 24
+    initial_release: 0.10
+
+governance:
+  proposal_threshold: 10000  # Tokens needed to create proposal
+  quorum_percentage: 0.04  # 4% of total supply
+  voting_period_days: 7
+  execution_delay_days: 2
+
+staking:
+  enabled: true
+  min_stake: 100
+  lock_periods:
+    - duration_days: 30
+      multiplier: 1.0
+    - duration_days: 90
+      multiplier: 1.5
+    - duration_days: 365
+      multiplier: 3.0
+
+incentives:
+  participation_rewards:
+    vote_reward: 10
+    proposal_reward: 1000
+    implementation_reward: 5000
+  
+  liquidity_mining:
+    enabled: true
+    pools:
+      - pair: EXDAO/ETH
+        allocation: 0.60
+      - pair: EXDAO/USDC
+        allocation: 0.40
+
+treasury:
+  target_runway_months: 36
+  diversification_targets:
+    stablecoins: 0.40
+    eth: 0.30
+    dao_token: 0.20
+    other: 0.10
+  
+  spending_limits:
+    daily: 50000  # USD equivalent
+    weekly: 200000
+    monthly: 500000
+
+metadata:
+  created: 2025-01-22T00:00:00Z
+  last_updated: 2025-01-22T00:00:00Z
+  version: 1.0.0
+```

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DAHAO Proposal Schema",
+  "type": "object",
+  "required": ["title", "type", "description", "proposer"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100
+    },
+    "type": {
+      "type": "string", 
+      "enum": ["constitutional", "governance", "project", "budget", "partnership"]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 50
+    },
+    "proposer": {
+      "type": "string",
+      "description": "GitHub username of proposer"
+    },
+    "voting": {
+      "type": "object",
+      "properties": {
+        "threshold": {"type": "number", "minimum": 0.5, "maximum": 1.0},
+        "quorum": {"type": "number", "minimum": 0.1, "maximum": 1.0},
+        "duration": {"type": "string", "pattern": "^\\d+ days?$"}
+      }
+    }
+  }
+}

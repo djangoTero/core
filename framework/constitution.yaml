@@ -1,0 +1,41 @@
+name: "DAHAO Core Constitution"
+version: "1.0.0"
+type: "constitution"
+status: "active"
+
+preamble: |
+  This constitution establishes the fundamental principles and governance 
+  structure for the Decentralized Autonomous Hybrid AI Organization (DAHAO).
+
+sections:
+  - id: "what-is-dahao"
+    title: "What is DAHAO"
+    file: "sections/01-what-is-dahao.yaml"
+    
+  - id: "core-values"
+    title: "Core Values"
+    file: "sections/02-core-values.yaml"
+    
+  - id: "governance-model"
+    title: "Governance Model"
+    file: "sections/03-governance-model.yaml"
+    
+  - id: "membership"
+    title: "Membership & Participation"
+    file: "sections/04-membership.yaml"
+    
+  - id: "decision-making"
+    title: "Decision Making Process"
+    file: "sections/05-decision-making.yaml"
+
+amendment_process:
+  proposal_threshold: 0.05    # 5% of members can propose
+  voting_threshold: 0.67      # 67% supermajority required
+  voting_period: "14 days"
+  implementation_delay: "7 days"
+
+metadata:
+  created: "2025-05-23"
+  last_modified: "2025-05-23"
+  authors: ["DAHAO Core Team"]
+  license: "CC BY-SA 4.0"

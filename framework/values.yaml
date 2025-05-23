@@ -1,0 +1,65 @@
+name: "DAHAO Core Values"
+version: "1.0.0"
+type: "values"
+status: "immutable"
+
+description: |
+  These are the immutable core values that define DAHAO's identity and purpose.
+  They cannot be changed and must be inherited by all Sub-DAHAOs.
+
+core_values:
+  transparency:
+    title: "Radical Transparency"
+    description: "All decisions, processes, and data are open and accessible"
+    principles:
+      - "Open source by default"
+      - "Public decision-making processes"
+      - "Accessible governance documentation"
+      - "Clear audit trails for all actions"
+    
+  decentralization:
+    title: "True Decentralization"
+    description: "Power and decision-making distributed across the network"
+    principles:
+      - "No single point of control"
+      - "Autonomous sub-organizations"
+      - "Distributed governance mechanisms"
+      - "Permissionless participation"
+    
+  human_ai_symbiosis:
+    title: "Human-AI Symbiosis"
+    description: "Harmonious collaboration between human and artificial intelligence"
+    principles:
+      - "AI augments human capabilities"
+      - "Humans provide wisdom and ethics"
+      - "Mutual respect and understanding"
+      - "Shared responsibility for decisions"
+    
+  sustainability:
+    title: "Long-term Sustainability"
+    description: "Actions and decisions consider long-term impact"
+    principles:
+      - "Environmental responsibility"
+      - "Economic sustainability"
+      - "Social equity and inclusion"
+      - "Intergenerational thinking"
+    
+  innovation:
+    title: "Continuous Innovation"
+    description: "Embracing change and fostering creative solutions"
+    principles:
+      - "Experimentation encouraged"
+      - "Failure as learning opportunity"
+      - "Adaptation to new technologies"
+      - "Creative problem-solving"
+
+enforcement:
+  immutable: true
+  inheritance: "required"
+  violations: "automatic_rejection"
+
+metadata:
+  created: "2025-05-23"
+  authors: ["DAHAO Founders"]
+  ratification_date: "2025-05-23"
+  note: "These values form the immutable foundation of DAHAO"
