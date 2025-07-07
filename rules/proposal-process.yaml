@@ -1,0 +1,55 @@
+# rules/proposal-process.yaml
+# Executable workflow for governance proposals
+
+title: "Proposal Process Workflow"
+
+trigger: "When [Proposal] tag appears in GitHub Discussions"
+
+workflow:
+  initialize:
+    - "Extract proposal content and metadata"
+    - "Identify which governance element is being modified"
+    - "Check proposer is valid @participant"
+
+  research:
+    - "Search for similar past proposals"
+    - "Analyze potential impacts on existing governance"
+    - "Check for conflicts with current rules"
+
+  validate:
+    - "Ensure proposal format is complete"
+    - "Verify doesn't violate immutable foundations"
+    - "Check alignment with #principles"
+
+  discussion_period:
+    - "Set timer based on proposal type (3-14 days)"
+    - "Notify all active @participants"
+    - "Enable AI agents to analyze and comment"
+    - "Track engagement metrics"
+
+  decision:
+    - "Calculate if @consensus threshold reached"
+    - "If yes: Create implementation PR"
+    - "If no: Document reasons and archive"
+    - "If close: Suggest modifications"
+
+mcp_integrations:
+  - service: "github"
+    for: "Managing discussions, PRs, and notifications"
+  - service: "openai"
+    for: "Analyzing proposal impact and principle alignment"
+  - service: "claude"
+    for: "Generating summary and recommendations"
+
+outputs:
+  - type: "decision"
+    format: "approved|rejected|modify"
+  - type: "implementation"
+    format: "pull_request_url"
+  - type: "report"
+    format: "markdown_summary"
+
+uses_terms:
+  - "@participant@1.0.0"
+  - "@consensus@1.0.0"
+  - "@discussion@1.0.0"

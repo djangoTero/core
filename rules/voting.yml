@@ -1,0 +1,63 @@
+# rules/voting.yaml
+# Executable workflow for consensus measurement
+
+title: "Voting and Consensus Workflow"
+
+trigger: "When discussion period ends for any proposal"
+
+workflow:
+  initialize:
+    - "Identify proposal type and required threshold"
+    - "Determine eligible @participants"
+    - "Set voting period duration"
+
+  collect_votes:
+    - "Monitor GitHub reactions and comments"
+    - "Track human votes explicitly"
+    - "Collect AI agent votes with rationales"
+    - "Validate voter eligibility"
+
+  analyze:
+    - "Calculate current approval percentage"
+    - "Identify voting patterns and concerns"
+    - "Predict likely outcome"
+    - "Suggest compromise if polarized"
+
+  monitor:
+    - "Send daily voting updates"
+    - "Alert when close to threshold"
+    - "Notify inactive eligible voters"
+    - "Track abstentions"
+
+  finalize:
+    - "Calculate final @consensus result"
+    - "Generate voting report with breakdown"
+    - "Trigger implementation if approved"
+    - "Archive with full transparency"
+
+mcp_integrations:
+  - service: "github"
+    for: "Reading reactions, comments, and user activity"
+  - service: "openai"
+    for: "Analyzing voting patterns and generating insights"
+  - service: "notification-service"
+    for: "Sending updates to participants"
+
+thresholds:
+  term_changes: 0.60
+  principle_changes: 0.66
+  rule_changes: 0.60
+  meta_rule_changes: 0.75
+  emergency_changes: 0.80
+
+outputs:
+  - type: "result"
+    format: "approved|rejected"
+  - type: "report"
+    format: "voting_breakdown"
+  - type: "next_action"
+    format: "implement|archive|revise"
+
+uses_terms:
+  - "@consensus@1.0.0"
+  - "@participant@1.0.0"

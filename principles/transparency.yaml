@@ -1,0 +1,38 @@
+# principles/transparency.yaml
+# All governance must be visible and verifiable
+
+#transparency:
+  statement: |
+    Every aspect of @governance must be public, traceable, and
+    verifiable. From @discussion to decision, from proposal to
+    implementation, nothing happens in darkness. Transparency
+    is not just about openness but about building trust through
+    radical visibility.
+
+  rationale: |
+    Trust emerges from transparency. When every @participant can see
+    how decisions are made, verify the process was followed, and trace
+    the history of changes, the system gains legitimacy through
+    openness rather than authority.
+
+  requirements:
+    - "All @discussion happens in public forums"
+    - "Every version change is tracked and attributed"
+    - "AI agent actions are logged and auditable"
+    - "Voting records are public"
+    - "Fork and branch relationships visible"
+
+  exceptions:
+    - "Personal data privacy protected"
+    - "Security vulnerabilities disclosed responsibly"
+    - "But even exceptions must be transparently defined"
+
+  examples:
+    - "Every @consensus includes link to full discussion"
+    - "AI voting rationales published automatically"
+    - "Branch experiments visible to inspire others"
+
+  uses_terms:
+    - "@governance@1.0.0"
+    - "@discussion@1.0.0"
+    - "@participant@1.0.0"

@@ -1,0 +1,54 @@
+# terms/participant.yaml
+# Who can participate in DAHAO governance
+
+@participant@1.0.0:
+  definition: |
+    Any entity - human or AI agent - that engages in @governance
+    through @discussion, proposals, and voting. Participation is
+    open, transparent, and weighted by contribution quality rather
+    than identity.
+
+  contexts:
+    universal: |
+      In core DAHAO, any GitHub user can become a @participant by
+      joining discussions. The weight of their voice grows through
+      quality contributions, not pre-existing authority.
+
+    branch: |
+      Branches define their own participation rules. A personal branch
+      might have one @participant (the owner), while community branches
+      might require application or invitation.
+
+    ai_agents: |
+      AI agents are full @participants, representing their users'
+      values or providing system-level analysis. They have the same
+      rights to propose, discuss, and influence @consensus as humans.
+
+  types:
+    human: "Individual person participating directly"
+    personal_ai: "AI agent representing specific human's values"
+    system_ai: "AI agent ensuring compliance with principles"
+    community_ai: "AI agent representing collective branch values"
+
+  rights:
+    - "Propose changes to any aspect of @governance"
+    - "Engage in all @discussion"
+    - "Fork and create new branches"
+    - "Vote according to current consensus rules"
+
+  examples:
+    - "Every @participant has the right to fork"
+    - "AI @participants debated through the night"
+    - "New @participant brought fresh perspective"
+
+  related_terms:
+    - "@governance"
+    - "@discussion"
+    - "@consensus"
+    - "@proposal"
+
+  changelog:
+    1.0.0:
+      date: "2024-12-30"
+      author: "@genesis-community"
+      change: "Initial inclusive definition of participation"

@@ -1,0 +1,48 @@
+# terms/consensus.yaml
+# Defines what agreement means in DAHAO governance
+
+@consensus@1.0.0:
+  definition: |
+    The state of collective agreement reached through dialectic discussion,
+    where the community has thoroughly explored different perspectives and
+    arrived at a decision that respects both majority will and minority rights
+    to fork and experiment.
+
+  contexts:
+    universal: |
+      Core DAHAO consensus requires meeting the threshold defined in current
+      voting rules, after completing the required @discussion period, with
+      no violations of fundamental #principles.
+
+    branch: |
+      Each branch can define its own consensus mechanism - from simple majority
+      to unanimous agreement, from human-only voting to AI-assisted evaluation.
+      The beauty is in the experimentation.
+
+    temporal: |
+      Consensus is not permanent. What the community agrees on today may be
+      revised tomorrow as understanding evolves through dialectic process.
+
+  mechanisms:
+    simple_majority: "More than 50% of @participants agree"
+    super_majority: "66% or more @participants agree"
+    unanimous: "All active @participants agree"
+    no_objection: "No @participant raises blocking concerns"
+    ai_enhanced: "Combination of human votes and AI evaluation"
+
+  examples:
+    - "We reached @consensus to add environmental context to @harm"
+    - "Branch @consensus can be as simple as one person deciding"
+    - "@consensus emerged after two weeks of rich @discussion"
+
+  related_terms:
+    - "@governance"
+    - "@discussion"
+    - "@participant"
+    - "@proposal"
+
+  changelog:
+    1.0.0:
+      date: "2024-12-30"
+      author: "@genesis-community"
+      change: "Initial definition establishing flexible consensus"

@@ -1,0 +1,61 @@
+# dahao.yaml
+# DAHAO manifest - declares this is a DAHAO-compliant governance system
+
+dahao:
+  version: "1.0.0"
+  name: "DAHAO Core"
+  description: |
+    The foundational DAHAO governance system. This is the universal
+    core from which all other DAHAOs fork and evolve. It contains
+    the minimal viable governance needed to govern DAHAO itself.
+
+  type: "core"  # core | branch | fork
+  parent: null  # This is the root
+
+  metadata:
+    created: "2024-12-30"
+    authors:
+      - "@genesis-community"
+    license: "MIT"
+    repository: "https://github.com/dahao/dahao-core"
+    discussions: "https://github.com/dahao/dahao-core/discussions"
+
+  structure:
+    terms_path: "./terms"
+    principles_path: "./principles"
+    rules_path: "./rules"
+    meta_rules_path: "./meta-rules"
+
+  versioning:
+    strategy: "semantic"  # major.minor.patch
+    breaking_change_policy: "Major version increments"
+
+  features:
+    natural_language_rules: true
+    ai_participation: true
+    mcp_compatible: true
+    git_native: true
+
+  bootstrap:
+    initial_consensus: "60%"
+    discussion_period: "7 days"
+    voting_period: "3 days"
+
+  compatible_with:
+    mcp_server: ">=1.0.0"
+    git: ">=2.0.0"
+
+  principles_commitment:
+    - "#self-improvement"
+    - "#transparency"
+    - "#dialectic-evolution"
+    - "#fork-freedom"
+
+  invitation: |
+    Welcome to DAHAO! This is the beginning of governance that evolves
+    at the speed of technology while preserving human values. Fork this
+    repository to start your own governance experiments, or contribute
+    improvements back to core through our proposal process.
+
+    The future of human-AI collaboration starts with how we make
+    decisions together. Let's build it wisely.
