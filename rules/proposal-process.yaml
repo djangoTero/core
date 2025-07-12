@@ -36,9 +36,9 @@ workflow:
 mcp_integrations:
   - service: "github"
     for: "Managing discussions, PRs, and notifications"
-  - service: "openai"
+  - service: "llm"
     for: "Analyzing proposal impact and principle alignment"
-  - service: "claude"
+  - service: "llm"
     for: "Generating summary and recommendations"
 
 outputs:

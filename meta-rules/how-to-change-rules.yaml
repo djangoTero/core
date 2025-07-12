@@ -1,0 +1,70 @@
+# meta-rules/how-to-change-rules.yaml
+# The process for evolving governance itself
+
+title: "Governance Evolution Meta-Rule"
+
+description: |
+  How DAHAO governance can change over time. This meta-rule defines
+  the process for modifying rules, terms, principles, and even other
+  meta-rules, ensuring governance can evolve while maintaining stability.
+
+categories:
+  terms:
+    process: "Standard proposal process"
+    discussion_period: "7 days minimum"
+    consensus_threshold: "60%"
+    versioning: "Semantic versioning required"
+    breaking_changes: "Require major version bump"
+
+  rules:
+    process: "Enhanced proposal process"
+    discussion_period: "14 days minimum"
+    consensus_threshold: "66%"
+    testing: "Must be tested in branch for 30 days"
+    rollback: "Previous version active for 7 days after change"
+
+  principles:
+    process: "Extraordinary proposal process"
+    discussion_period: "30 days minimum"
+    consensus_threshold: "75%"
+    branch_testing: "Multiple branches must validate"
+    cooling_period: "7 days between discussion and vote"
+
+  meta_rules:
+    process: "Constitutional amendment process"
+    discussion_period: "45 days minimum"
+    consensus_threshold: "80%"
+    ratification: "Requires branch ratification"
+    implementation_delay: "30 days after approval"
+
+change_workflow:
+  1_proposal:
+    - "Create [Proposal] discussion with clear diff"
+    - "Specify which category is being changed"
+    - "Provide rationale and impact analysis"
+
+  2_discussion:
+    - "Mandatory discussion period based on category"
+    - "AI agents analyze for unintended consequences"
+    - "Alternative proposals can be submitted"
+
+  3_testing:
+    - "Branch implementation for validation"
+    - "Gather metrics on impact"
+    - "Document any issues discovered"
+
+  4_decision:
+    - "Check consensus threshold met"
+    - "Verify process was followed"
+    - "Create implementation PR if approved"
+
+  5_implementation:
+    - "Apply versioning rules"
+    - "Update all references"
+    - "Notify all branches of changes"
+
+immutable_aspects:
+  - "The right to fork (#fork-freedom)"
+  - "Versioning requirement for terms"
+  - "Transparency of all governance"
+  - "This meta-rule modification process"
