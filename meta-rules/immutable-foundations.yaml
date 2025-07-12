@@ -1,0 +1,56 @@
+# meta-rules/immutable-foundations.yaml
+# The unchangeable bedrock of DAHAO
+
+title: "Meta-Rule: Immutable Foundations"
+
+preamble: |
+  While DAHAO embraces change and evolution, certain foundational
+  elements must remain constant to preserve its essential nature.
+  These immutable foundations cannot be changed, only abandoned by
+  forking to create something new.
+
+immutable_foundations:
+  1_fork_freedom: |
+    The right to fork and create new governance experiments is absolute
+    and inalienable. No rule, vote, or consensus can remove this right.
+    This ensures peaceful exit and continuous innovation.
+
+  2_transparency: |
+    All governance must be public and auditable. While implementation
+    details may vary, the principle of radical transparency cannot be
+    made optional or restricted.
+
+  3_versioning: |
+    All changes must be versioned and history must be preserved. The
+    ability to see how governance evolved and to rollback changes is
+    fundamental to trust and learning.
+
+  4_no_eternal_rules: |
+    Except for these immutable foundations, no rule can be made
+    permanently unchangeable. The system must always be able to
+    evolve beyond its current state.
+
+rationale: |
+  These foundations are not arbitrary restrictions but necessary
+  conditions for DAHAO to function as intended. Without fork freedom,
+  it becomes tyranny. Without transparency, it becomes conspiracy.
+  Without versioning, it becomes revisionism. Without change capacity,
+  it becomes dogma.
+
+enforcement: |
+  These foundations are enforced by:
+  - The community's commitment to the vision
+  - The technical architecture (Git's immutable history)
+  - The right to fork if violated
+  - AI agents trained to detect violations
+
+paradox_resolution: |
+  "But can this rule change itself?" No. These foundations can only
+  be abandoned by creating a new system. DAHAO with different
+  foundations would not be DAHAO but something else. Fork freely
+  to explore alternatives.
+
+uses_principles:
+  - "#fork-freedom"
+  - "#transparency"
+  - "#self-improvement"
