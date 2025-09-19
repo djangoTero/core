@@ -1,51 +1,22 @@
-# principles/self-improvement.yaml
-# The commitment to continuous evolution
+doc:
+  kind: "principle"
+  id: "self-improvement"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-#self-improvement:
-  statement: |
-    DAHAO must continuously evolve and improve through experimentation,
-    learning, and adaptation. Stagnation is death for governance. Every
-    failure teaches, every success propagates, and every fork explores
-    new possibilities.
+statement: "DAHAO must continuously learn, experiment, and adapt."
 
-  rationale: |
-    Static governance fails because the world changes. DAHAO embraces
-    change as the only constant, building mechanisms for continuous
-    improvement into its foundation. Through branches, we test. Through
-    merging, we evolve. Through forking, we explore.
+mechanisms:
+  retrospectives_every_days: 90
+  metrics_required: true
+  branch_experiments_encouraged: true
+  ai_pattern_analysis: true
 
-  mechanisms:
-    - "Regular retrospectives on governance effectiveness"
-    - "Metrics tracking for rule usage and outcomes"
-    - "Branch experiments as innovation labs"
-    - "AI analysis of governance patterns"
-    - "Community feedback loops"
-
-  indicators:
-    healthy:
-      - "Multiple active branches experimenting"
-      - "Regular proposals for improvements"
-      - "Lessons learned from failed experiments"
-      - "Cross-pollination between branches"
-
-    unhealthy:
-      - "No proposals in 30 days"
-      - "No active branches"
-      - "Repeated failures without adaptation"
-      - "Ossification of processes"
-
-  commitments:
-    - "Every quarter: Governance effectiveness review"
-    - "Every proposal: Impact measurement plan"
-    - "Every branch: Share learnings upstream"
-    - "Every failure: Document lessons learned"
-
-  examples:
-    - "Monthly metrics showed proposal process too slow, reduced to 3 days"
-    - "Branch experiment with AI-only voting informed hybrid approach"
-    - "Failed consensus mechanism became case study for others"
-
-  uses_terms:
-    - "@governance@1.0.0"
-    - "@participant@1.0.0"
-    - "@discussion@1.0.0"
+health_indicators:
+  healthy:
+    - "Active proposals and experiments"
+    - "Cross-branch knowledge sharing"
+  unhealthy:
+    - "No proposals in 30 days"
+    - "No active experiments"

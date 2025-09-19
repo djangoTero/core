@@ -1,70 +1,66 @@
-# meta-rules/how-to-change-rules.yaml
-# The process for evolving governance itself
+doc:
+  kind: "meta-rule"
+  id: "governance-evolution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+  authors: ["@genesis-community"]
+  uses_principles: ["#transparency", "#fork-freedom", "#self-improvement"]
+  summary: "Defines how terms, rules, principles, and meta-rules may change."
 
-title: "Governance Evolution Meta-Rule"
+process:
+  categories:
+    term:
+      minimal_discussion_days: 7
+      threshold: 0.60
+      versioning: "semver"
+      breaking_change: "major"
+    rule:
+      minimal_discussion_days: 10
+      threshold: 0.60
+      branch_testing_days: 14
+      rollback_grace_days: 7
+    principle:
+      minimal_discussion_days: 21
+      cooling_period_days: 7
+      threshold: 0.66
+      multi_branch_validation: true
+    meta_rule:
+      minimal_discussion_days: 30
+      cooling_period_days: 7
+      threshold: 0.75
+      ratification: "2+ active branches confirm"
+      implementation_delay_days: 14
 
-description: |
-  How DAHAO governance can change over time. This meta-rule defines
-  the process for modifying rules, terms, principles, and even other
-  meta-rules, ensuring governance can evolve while maintaining stability.
+  workflow:
+    - step: "proposal"
+      must:
+        - "Identify target category and files"
+        - "Provide diff, rationale, and impact analysis"
+        - "Declare version bump intent"
+    - step: "discussion"
+      must:
+        - "Keep public thread open ≥ minimal_discussion_days"
+        - "Invite counter-arguments (dialectic)"
+        - "Publish periodic AI syntheses"
+    - step: "testing"
+      when: "rule || principle"
+      must:
+        - "Run in branch/experiment for required period"
+        - "Collect metrics and failure cases"
+    - step: "decision"
+      must:
+        - "Verify quorum and threshold"
+        - "Publish voting breakdown and rationales"
+    - step: "implementation"
+      must:
+        - "Apply versioning"
+        - "Update references"
+        - "Announce to all branches"
+        - "Schedule rollback window if required"
 
-categories:
-  terms:
-    process: "Standard proposal process"
-    discussion_period: "7 days minimum"
-    consensus_threshold: "60%"
-    versioning: "Semantic versioning required"
-    breaking_changes: "Require major version bump"
-
-  rules:
-    process: "Enhanced proposal process"
-    discussion_period: "14 days minimum"
-    consensus_threshold: "66%"
-    testing: "Must be tested in branch for 30 days"
-    rollback: "Previous version active for 7 days after change"
-
-  principles:
-    process: "Extraordinary proposal process"
-    discussion_period: "30 days minimum"
-    consensus_threshold: "75%"
-    branch_testing: "Multiple branches must validate"
-    cooling_period: "7 days between discussion and vote"
-
-  meta_rules:
-    process: "Constitutional amendment process"
-    discussion_period: "45 days minimum"
-    consensus_threshold: "80%"
-    ratification: "Requires branch ratification"
-    implementation_delay: "30 days after approval"
-
-change_workflow:
-  1_proposal:
-    - "Create [Proposal] discussion with clear diff"
-    - "Specify which category is being changed"
-    - "Provide rationale and impact analysis"
-
-  2_discussion:
-    - "Mandatory discussion period based on category"
-    - "AI agents analyze for unintended consequences"
-    - "Alternative proposals can be submitted"
-
-  3_testing:
-    - "Branch implementation for validation"
-    - "Gather metrics on impact"
-    - "Document any issues discovered"
-
-  4_decision:
-    - "Check consensus threshold met"
-    - "Verify process was followed"
-    - "Create implementation PR if approved"
-
-  5_implementation:
-    - "Apply versioning rules"
-    - "Update all references"
-    - "Notify all branches of changes"
-
-immutable_aspects:
-  - "The right to fork (#fork-freedom)"
-  - "Versioning requirement for terms"
-  - "Transparency of all governance"
-  - "This meta-rule modification process"
+immutables:
+  - "Right to fork cannot be revoked"
+  - "Transparency of governance cannot be reduced below public visibility of: proposals, discussions, votes, changelogs"
+  - "All governance artifacts must be versioned"
+  - "This meta-rule can only be changed via meta_rule path above"

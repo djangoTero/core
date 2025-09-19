@@ -1,38 +1,20 @@
-# principles/transparency.yaml
-# All governance must be visible and verifiable
+doc:
+  kind: "principle"
+  id: "transparency"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-#transparency:
-  statement: |
-    Every aspect of @governance must be public, traceable, and
-    verifiable. From @discussion to decision, from proposal to
-    implementation, nothing happens in darkness. Transparency
-    is not just about openness but about building trust through
-    radical visibility.
+statement: "All governance is visible and verifiable."
 
-  rationale: |
-    Trust emerges from transparency. When every @participant can see
-    how decisions are made, verify the process was followed, and trace
-    the history of changes, the system gains legitimacy through
-    openness rather than authority.
+requirements:
+  - "Public discussions and vote tallies"
+  - "Versioned artifacts with changelogs"
+  - "AI action logs (prompts, outputs, rationales) attached to proposals and votes"
+  - "Fork/branch graph published"
 
-  requirements:
-    - "All @discussion happens in public forums"
-    - "Every version change is tracked and attributed"
-    - "AI agent actions are logged and auditable"
-    - "Voting records are public"
-    - "Fork and branch relationships visible"
-
-  exceptions:
-    - "Personal data privacy protected"
-    - "Security vulnerabilities disclosed responsibly"
-    - "But even exceptions must be transparently defined"
-
-  examples:
-    - "Every @consensus includes link to full discussion"
-    - "AI voting rationales published automatically"
-    - "Branch experiments visible to inspire others"
-
-  uses_terms:
-    - "@governance@1.0.0"
-    - "@discussion@1.0.0"
-    - "@participant@1.0.0"
+exceptions:
+  - id: "privacy"
+    rule: "Personal data protected; redact content but record redaction event"
+  - id: "security"
+    rule: "Vulnerability details responsibly disclosed with a dated summary"

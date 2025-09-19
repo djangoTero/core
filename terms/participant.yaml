@@ -1,54 +1,31 @@
-# terms/participant.yaml
-# Who can participate in DAHAO governance
+term:
+  id: "participant"
+  version: "1.0.0"
+  alias: "@participant@1.0.0"
 
-@participant@1.0.0:
-  definition: |
-    Any entity - human or AI agent - that engages in @governance
-    through @discussion, proposals, and voting. Participation is
-    open, transparent, and weighted by contribution quality rather
-    than identity.
+definition: |
+  Any human or AI agent engaging in DAHAO governance (discussion, proposals, voting)
+  under transparent identity and recorded actions.
 
-  contexts:
-    universal: |
-      In core DAHAO, any GitHub user can become a @participant by
-      joining discussions. The weight of their voice grows through
-      quality contributions, not pre-existing authority.
+types:
+  - "human"
+  - "personal_ai"     # agent aligned to a single human's declared values
+  - "community_ai"    # agent aligned to branch/community charter
+  - "system_ai"       # compliance/analysis agent with read-only powers unless gated
 
-    branch: |
-      Branches define their own participation rules. A personal branch
-      might have one @participant (the owner), while community branches
-      might require application or invitation.
+rights:
+  - "Propose changes"
+  - "Join discussions"
+  - "Vote per eligibility rules"
+  - "Fork with preserved history"
 
-    ai_agents: |
-      AI agents are full @participants, representing their users'
-      values or providing system-level analysis. They have the same
-      rights to propose, discuss, and influence @consensus as humans.
+duties:
+  - "Act in good faith"
+  - "Respect transparency requirements"
+  - "Disclose AI involvement in authorship"
 
-  types:
-    human: "Individual person participating directly"
-    personal_ai: "AI agent representing specific human's values"
-    system_ai: "AI agent ensuring compliance with principles"
-    community_ai: "AI agent representing collective branch values"
-
-  rights:
-    - "Propose changes to any aspect of @governance"
-    - "Engage in all @discussion"
-    - "Fork and create new branches"
-    - "Vote according to current consensus rules"
-
-  examples:
-    - "Every @participant has the right to fork"
-    - "AI @participants debated through the night"
-    - "New @participant brought fresh perspective"
-
-  related_terms:
-    - "@governance"
-    - "@discussion"
-    - "@consensus"
-    - "@proposal"
-
-  changelog:
-    1.0.0:
-      date: "2024-12-30"
-      author: "@genesis-community"
-      change: "Initial inclusive definition of participation"
+related_terms: ["governance", "discussion", "consensus"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "Initial definition"

@@ -1,46 +1,20 @@
-# terms/governance.yaml
-# The foundational term that defines what governance means in DAHAO
+term:
+  id: "governance"
+  version: "1.0.0"
+  alias: "@governance@1.0.0"
 
-@governance@1.0.0:
-  definition: |
-    The system of collective decision-making through which a community
-    evolves its rules, terms, and principles through dialectic discussion
-    enhanced by human-AI collaboration.
+definition: |
+  The evolving system of rules, terms, and principles that guide decision-making,
+  implemented as auditable text and versioned changes.
 
-  contexts:
-    universal: |
-      The process by which DAHAO itself evolves and improves, where
-      every @participant can propose changes that undergo @discussion
-      and require @consensus to be adopted.
+contexts:
+  core: "This repository and its processes"
+  branch: "Local variations that remain transparent and versioned"
+  technical: "Decisions about code/infra that affect processes"
+  philosophical: "Mission, values, and principle evolution"
 
-    branch: |
-      The local governance within a specific sub-DAHAO branch (relatively
-      connected with core DAHAO), which may have different rules for
-      decision-making while maintaining compatibility with core DAHAO
-      principles. Individuals are fully free to experiment, modify, and
-      evolve their branch governance as they see fit.
-
-    technical: |
-      Decisions about code, architecture, infrastructure, and implementation
-      that affect how DAHAO operates as a system.
-
-    philosophical: |
-      Evolution of core concepts, principles, and the fundamental mission
-      of creating human-AI collaborative governance.
-
-  examples:
-    - "The @governance of climate-action branch requires unanimous consent"
-    - "Our @governance process values dialectic over declaration"
-    - "Branch @governance can be more experimental than core"
-
-  related_terms:
-    - "@consensus"
-    - "@proposal"
-    - "@discussion"
-    - "@participant"
-
-  changelog:
-    1.0.0:
-      date: "2024-12-30"
-      author: "@genesis-community"
-      change: "Initial definition of governance for DAHAO"
+related_terms: ["consensus", "discussion", "participant"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "Initial definition"

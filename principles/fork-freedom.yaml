@@ -1,37 +1,18 @@
-# principles/fork-freedom.yaml
-# The right to experiment must be absolute
+doc:
+  kind: "principle"
+  id: "fork-freedom"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-#fork-freedom:
-  statement: |
-    Every @participant has the inalienable right to fork and create
-    their own governance experiments. When @consensus cannot be reached,
-    or when minorities need to explore different paths, forking enables
-    peaceful divergence without forcing compromise that satisfies no one.
+statement: |
+  The right to fork is absolute. Divergence is experimentation, not betrayal.
 
-  rationale: |
-    Innovation requires experimentation. By guaranteeing the right to
-    fork, DAHAO ensures that @governance evolution never stagnates due
-    to majoritarian blocking. The best ideas can be proven in branches
-    before being adopted by core.
+guarantees:
+  - "No permission required to fork"
+  - "History and attribution preserved"
+  - "Upstream proposals from forks are welcome"
 
-  guarantees:
-    - "Forking requires no permission"
-    - "Full history and attribution preserved"
-    - "Branches can propose improvements upstream"
-    - "Successful innovations can merge back"
-    - "Parallel experiments enrich the ecosystem"
-
-  balance:
-    - "Forking is not fragmentation but experimentation"
-    - "Network effects encourage compatibility"
-    - "Shared principles connect diverse branches"
-
-  examples:
-    - "Animal welfare fork pioneered new @harm definitions"
-    - "Personal branches test radical governance"
-    - "Failed experiments harm only the branch"
-
-  uses_terms:
-    - "@participant@1.0.0"
-    - "@governance@1.0.0"
-    - "@consensus@1.0.0"
+balance_notes:
+  - "Network effects reward compatibility"
+  - "Shared principles foster convergence without coercion"

@@ -1,55 +1,41 @@
-# rules/proposal-process.yaml
-# Executable workflow for governance proposals
+doc:
+  kind: "rule"
+  id: "proposal-process"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-title: "Proposal Process Workflow"
+trigger: "Thread tagged [Proposal]"
 
-trigger: "When [Proposal] tag appears in GitHub Discussions"
-
-workflow:
-  initialize:
-    - "Extract proposal content and metadata"
-    - "Identify which governance element is being modified"
-    - "Check proposer is valid @participant"
-
-  research:
-    - "Search for similar past proposals"
-    - "Analyze potential impacts on existing governance"
-    - "Check for conflicts with current rules"
-
-  validate:
-    - "Ensure proposal format is complete"
-    - "Verify doesn't violate immutable foundations"
-    - "Check alignment with #principles"
-
-  discussion_period:
-    - "Set timer based on proposal type (3-14 days)"
-    - "Notify all active @participants"
-    - "Enable AI agents to analyze and comment"
-    - "Track engagement metrics"
-
-  decision:
-    - "Calculate if @consensus threshold reached"
-    - "If yes: Create implementation PR"
-    - "If no: Document reasons and archive"
-    - "If close: Suggest modifications"
-
-mcp_integrations:
-  - service: "github"
-    for: "Managing discussions, PRs, and notifications"
-  - service: "llm"
-    for: "Analyzing proposal impact and principle alignment"
-  - service: "llm"
-    for: "Generating summary and recommendations"
+steps:
+  - name: "intake"
+    must:
+      - "Identify artifact(s) and category"
+      - "Provide structured diff + rationale + impact"
+      - "Declare proposed version bump"
+  - name: "conflict-scan"
+    must:
+      - "Search prior proposals"
+      - "Detect conflicting rules/terms"
+  - name: "validation"
+    must:
+      - "Check immutable foundations"
+      - "Check principle alignment"
+  - name: "discussion"
+    must:
+      - "Hold open per category minimum days (see meta-rule)"
+      - "Publish AI syntheses"
+  - name: "decision"
+    must:
+      - "Verify quorum and threshold"
+      - "Publish vote breakdown and rationales"
+  - name: "implementation"
+    must:
+      - "Merge changes"
+      - "Tag release"
+      - "Update changelogs and site pages (mission/how-it-works/etc.)"
 
 outputs:
-  - type: "decision"
-    format: "approved|rejected|modify"
-  - type: "implementation"
-    format: "pull_request_url"
-  - type: "report"
-    format: "markdown_summary"
-
-uses_terms:
-  - "@participant@1.0.0"
-  - "@consensus@1.0.0"
-  - "@discussion@1.0.0"
+  - "approved|rejected|revise"
+  - "pull_request_url"
+  - "markdown_summary"
