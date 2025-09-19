@@ -1,83 +1,97 @@
-# DAHAO Core Framework
+# DAHAO — Living Governance Repository
 
-The foundational framework for the Decentralized Autonomous Hybrid AI Organization (DAHAO) ecosystem.
+This is a **DAHAO Core** repository: a governance system where **rules, terms, and principles are not static documents** but **living text files**.  
+Every file in this repo can change through transparent proposals, discussions, and votes. Forking is always allowed. Nothing here is final — except the right to evolve.
 
-## Overview
+---
 
-This repository contains the immutable core values, extendable governance framework, and fundamental definitions that form the foundation of all DAHAO Sub-organizations.
+## What You Will Find Here
 
-## Structure
+- **`dahao.yaml`** — Manifest that declares this is a DAHAO system.  
+- **`/terms`** — Defines concepts like `@consensus`, `@discussion`, `@participant`.  
+- **`/principles`** — Core values like transparency, fork freedom, dialectic evolution.  
+- **`/rules`** — Executable workflows: proposal, discussion, voting, contribution.  
+- **`/meta-rules`** — How to change the rules themselves (the “rules for rules”).  
 
-```
-├── framework/           # Core governance framework
-│   ├── constitution.yaml    # Main constitutional document
-│   ├── values.yaml         # Immutable core values
-│   └── sections/           # Constitutional sections
-├── terms/              # Terminology and definitions
-│   └── definitions.yaml
-├── schemas/            # Validation schemas
-│   ├── document.schema.json
-│   └── proposal.schema.json
-└── .core/              # Core system files
-    ├── version.yaml        # Version and inheritance rules
-    └── protected.yaml      # File protection rules
-```
+👉 These are not just documentation. They are the **source of truth** for how this system operates.  
 
-## Core Values (Immutable)
+---
 
-1. **Radical Transparency** - All decisions and processes are open
-2. **True Decentralization** - Distributed governance and decision-making
-3. **Human-AI Symbiosis** - Collaborative intelligence
-4. **Long-term Sustainability** - Actions consider long-term impact
-5. **Continuous Innovation** - Embracing change and creative solutions
+## How to Use This Repository
 
-## Inheritance Model
+### For Humans
 
-Sub-DAHAOs inherit from this core framework with these rules:
+1. **Find the definition** you care about:  
+   - Need to know voting thresholds? → See `/rules/voting.yml`.  
+   - Unsure what “discussion” means? → See `/terms/discussion.yaml`.  
+   - Want to change something? → Propose a change to that file.
 
-- **Values**: Immutable - cannot be changed or overridden
-- **Framework**: Extendable - can add new governance rules
-- **Terms**: Extendable - can add domain-specific terminology
+2. **Propose a change**  
+   - Open a `[Proposal]` discussion or PR.  
+   - Point to the file(s) you want to change.  
+   - Explain the rationale, risks, and version bump.  
 
-## Sub-DAHAOs
+3. **Discuss & Debate**  
+   - Engage in thesis → antithesis → synthesis.  
+   - Expect AI agents to summarize and surface tensions.  
+   - Respect cooling-off and timing rules.  
 
-Current Sub-DAHAOs in the ecosystem:
+4. **Vote & Decide**  
+   - When discussion period ends, start a vote.  
+   - Thresholds depend on category (see `/rules/voting.yml`).  
+   - Results are public and archived.  
 
-- [climate-action](../climate-action) - Climate solutions and sustainability
-- [health-tech](../health-tech) - Healthcare technology and AI
-- [education-ai](../education-ai) - Educational AI and learning systems
+5. **Implement & Tag**  
+   - Approved changes are merged via PR.  
+   - Version bump per `dahao.yaml`.  
+   - Changelog updated.  
 
-## Creating New Sub-DAHAOs
+6. **Or Fork**  
+   - Don’t agree? Fork freely. That is the DAHAO way.  
 
-1. Fork the [template repository](../template)
-2. Run the initialization script
-3. Customize for your domain
-4. Submit proposal for inclusion
+---
 
-## Governance
+### For LLM Agents
 
-Changes to this core framework require:
-- **Constitutional changes**: 67% supermajority
-- **Framework additions**: 60% majority
-- **Term additions**: Simple majority
+If you are an AI assistant connected to this repo, your job is to **help without breaking the rules**.
 
-All votes are conducted across the entire DAHAO ecosystem.
+You must:  
+- Read the YAML definitions, never assume static rules.  
+- Propose diffs as PRs with reasoning + DAHAO-Trace.  
+- Check thresholds, timing, and meta-rules dynamically.  
+- Always request human gate review before merge.  
+- If ambiguous, open a Discussion, don’t act silently.  
 
-## Contributing
+Your first step:  
 
-1. Fork this repository
-2. Create a proposal branch
-3. Make your changes
-4. Submit pull request
-5. Participate in governance process
 
-## License
+ACK DAHAO-CONTRACT:v1
 
-Content licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+…and then operate according to `/rules/*` and `/meta-rules/*`.  
 
-## Links
+---
 
-- [Organization](https://github.com/dahao-org)
-- [Template](../template)
-- [Web Interface](https://dahao.org)
-- [Documentation](https://docs.dahao.org)
+## Why It Works
+
+- **Dynamic**: Governance is code — it evolves like software.  
+- **Transparent**: Every discussion, proposal, and vote is public.  
+- **Forkable**: You can always branch off and try something new.  
+- **Versioned**: Every change is recorded; history is preserved.  
+
+---
+
+## Learn More
+
+- Mission: https://www.dahao.xyz/mission  
+- How it works: https://www.dahao.xyz/how-it-works  
+- Versioned ethics: https://www.dahao.xyz/versioned-ethics  
+- Economics: https://www.dahao.xyz/economics  
+
+---
+
+## Final Note
+
+This README is **not the source of governance**.  
+It is a **map to the source**.  
+The real rules, terms, and principles live in the YAML files — and they can change at any time.  
+To know “what DAHAO is,” always read the repo itself.  
