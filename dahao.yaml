@@ -1,61 +1,75 @@
-# dahao.yaml
 # DAHAO manifest - declares this is a DAHAO-compliant governance system
 
 dahao:
-  version: "1.0.0"
+  spec: "1.0"
   name: "DAHAO Core"
+  shortname: "dahao-core"
+  type: "core"        # core | branch | fork
+  parent: null        # core has no parent
+
   description: |
-    The foundational DAHAO governance system. This is the universal
-    core from which all other DAHAOs fork and evolve. It contains
-    the minimal viable governance needed to govern DAHAO itself.
+    DAHAO Core is the minimal, auditable governance kernel for human–AI
+    collaboration. It is file-native, fork-friendly, and enforces versioned
+    ethics. Humans retain ultimate authority; AI may assist but cannot enact
+    changes without explicit, recorded consent.
 
-  type: "core"  # core | branch | fork
-  parent: null  # This is the root
+  links:
+    mission: "https://www.dahao.xyz/mission"
+    how_it_works: "https://www.dahao.xyz/how-it-works"
+    versioned_ethics: "https://www.dahao.xyz/versioned-ethics"
+    economics: "https://www.dahao.xyz/economics"
+    repo: "https://github.com/dahao-org/dahao-core"
+    discussions: "https://github.com/dahao-org/dahao-core/discussions"
 
-  metadata:
-    created: "2024-12-30"
-    authors:
-      - "@genesis-community"
-    license: "MIT"
-    repository: "https://github.com/dahao/dahao-core"
-    discussions: "https://github.com/dahao/dahao-core/discussions"
+  content_license: "CC-BY-SA-4.0"
+  code_license: "MIT"
 
-  structure:
-    terms_path: "./terms"
-    principles_path: "./principles"
-    rules_path: "./rules"
-    meta_rules_path: "./meta-rules"
-
-  versioning:
-    strategy: "semantic"  # major.minor.patch
-    breaking_change_policy: "Major version increments"
+  paths:
+    terms: "./terms"
+    principles: "./principles"
+    rules: "./rules"
+    meta_rules: "./meta-rules"
 
   features:
-    natural_language_rules: true
-    ai_participation: true
+    file_native: true
+    ai_assist_allowed: true          # AI may analyze/summarize; cannot enforce
+    human_gate_required: true        # human approval required for changes
     mcp_compatible: true
     git_native: true
 
-  bootstrap:
-    initial_consensus: "60%"
-    discussion_period: "7 days"
-    voting_period: "3 days"
+  governance_defaults:
+    discussion_min_days: 7
+    voting_min_days: 3
+    quorum_min: 0.30                 # min 30% eligible participants
+    thresholds:
+      term_change: 0.60
+      rule_change: 0.60
+      principle_change: 0.66
+      meta_rule_change: 0.75
+      emergency_change: 0.80
+    tie_breaker: "no_change"         # ties fail safe
+    cooling_period_days: 2           # between discussion end and vote start
 
-  compatible_with:
-    mcp_server: ">=1.0.0"
-    git: ">=2.0.0"
+  versioning:
+    scheme: "semver"                 # major.minor.patch
+    tag_prefix: "v"
+    breaking_change_policy: "Major version increments only"
+    changelog_required: true
 
   principles_commitment:
-    - "#self-improvement"
     - "#transparency"
-    - "#dialectic-evolution"
     - "#fork-freedom"
+    - "#dialectic-evolution"
+    - "#self-improvement"
 
-  invitation: |
-    Welcome to DAHAO! This is the beginning of governance that evolves
-    at the speed of technology while preserving human values. Fork this
-    repository to start your own governance experiments, or contribute
-    improvements back to core through our proposal process.
+  audit:
+    record_ai_usage: true
+    public_vote_records: true
+    public_discussion_index: true
 
-    The future of human-AI collaboration starts with how we make
-    decisions together. Let's build it wisely.
+  bootstrap:
+    created: "2025-09-10"
+    authors:
+      - "@genesis-community"
+    initial_consensus_threshold: 0.60
+    initial_process_note: "Until first meta-rule revision, defaults above apply."

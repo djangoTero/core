@@ -1,37 +1,22 @@
-# principles/dialectic-evolution.yaml
-# Truth emerges through discussion, not declaration
+doc:
+  kind: "principle"
+  id: "dialectic-evolution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-#dialectic-evolution:
-  statement: |
-    Understanding emerges through the dialectic process of thesis,
-    antithesis, and synthesis. No single @participant, whether human
-    or AI, possesses complete truth. Only through @discussion that
-    genuinely engages with opposing views can wisdom emerge.
+statement: |
+  Truth emerges through thesis, antithesis, and synthesis. No single participant
+  (human or AI) holds completeness; decisions must be tested by principled opposition.
 
-  rationale: |
-    The history of human knowledge shows that progress comes from
-    challenging assumptions, not protecting them. By requiring all
-    @governance changes to undergo dialectic examination, DAHAO
-    ensures decisions are tested by opposition before adoption.
+rationale: |
+  Progress comes from surfacing and resolving tensions. Dialectic guards against
+  premature consensus and ossification.
 
-  process:
-    thesis: "Initial proposal or current state"
-    antithesis: "Challenges, concerns, alternatives"
-    synthesis: "New understanding incorporating both"
-    evolution: "Synthesis becomes new thesis"
+requirements:
+  - "Every proposal thread invites counter-arguments explicitly"
+  - "AI synthesizes perspectives at intervals"
+  - "Synthesis must address material concerns before a vote"
 
-  requirements:
-    - "Every proposal must allow counter-arguments"
-    - "Good faith engagement with opposition"
-    - "Time for antithesis to fully develop"
-    - "Synthesis must address raised concerns"
-
-  examples:
-    - "@harm definition evolved through environmental critique"
-    - "AI speed concerns led to human oversight synthesis"
-    - "Fork freedom emerged from centralization thesis"
-
-  uses_terms:
-    - "@discussion@1.0.0"
-    - "@participant@1.0.0"
-    - "@consensus@1.0.0"
+references:
+  terms: ["discussion", "participant", "consensus"]

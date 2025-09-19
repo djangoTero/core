@@ -1,51 +1,22 @@
-# terms/discussion.yaml
-# Structured dialogue for governance evolution
+term:
+  id: "discussion"
+  version: "1.0.0"
+  alias: "@discussion@1.0.0"
 
-@discussion@1.0.0:
-  definition: |
-    A structured dialogue process where @participants explore governance
-    topics through thesis, antithesis, and synthesis. Discussions are
-    time-bound, transparent, and aimed at reaching understanding rather
-    than winning arguments.
+definition: |
+  Structured, time-boxed, public dialogue exploring a governance change via thesis,
+  antithesis, and synthesis.
 
-  contexts:
-    proposal: |
-      Formal discussion period for governance proposals, with defined
-      start/end times and participation tracking.
+phases: ["opening", "exploration", "convergence", "conclusion"]
 
-    exploratory: |
-      Open-ended discussions to explore new ideas before formal proposals,
-      where concepts can be refined through collective intelligence.
+requirements:
+  - "Clear scope and question"
+  - "Public visibility"
+  - "AI syntheses at set intervals"
+  - "Indexed outcomes and links to proposals"
 
-    retrospective: |
-      Review of past decisions and their outcomes to inform future
-      governance evolution.
-
-  requirements:
-    - "Clear topic or question to explore"
-    - "Transparent participation (no anonymous contributions)"
-    - "AI synthesis at regular intervals"
-    - "Respectful engagement with opposing views"
-    - "Documentation of key insights"
-
-  phases:
-    opening: "Problem statement and initial positions"
-    exploration: "Deep dive into different perspectives"
-    convergence: "Finding common ground and synthesis"
-    conclusion: "Summary and next actions"
-
-  examples:
-    - "The @discussion on AI voting rights lasted two weeks"
-    - "Through @discussion, we discovered unintended consequences"
-    - "Branch @discussions can be faster and more experimental"
-
-  related_terms:
-    - "@consensus@1.0.0"
-    - "@participant@1.0.0"
-    - "@governance@1.0.0"
-
-  changelog:
-    1.0.0:
-      date: "2024-12-30"
-      author: "@genesis-community"
-      change: "Initial definition of structured discussion"
+related_terms: ["participant", "consensus", "governance"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "Initial definition"

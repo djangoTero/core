@@ -1,66 +1,41 @@
-# rules/branch-contribution.yaml
-# Executable workflow for upstream contributions
+doc:
+  kind: "rule"
+  id: "branch-innovation-contribution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-title: "Branch Innovation Contribution Workflow"
+trigger: "Branch opens an [Upstream-Proposal] discussion"
 
-trigger: "When branch creates [Upstream-Proposal] discussion"
+actors:
+  - "branch_maintainers"
+  - "core_reviewers"
+  - "ai_assistants"
 
 workflow:
   research:
-    - "Fetch branch governance files"
-    - "Compare with current core governance"
-    - "Identify innovations and differences"
-    - "Analyze usage metrics from branch"
-
+    - "Fetch and diff branch governance against core"
+    - "Identify novel mechanisms and empirical results"
   validate:
-    - "Check compatibility with core #principles"
-    - "Verify no breaking changes"
-    - "Test merge conflicts"
-    - "Assess broader applicability"
-
-  evidence_gathering:
-    - "Collect success metrics from branch"
-    - "Document failure cases and learnings"
-    - "Query branch @participants for feedback"
-    - "Generate implementation report"
-
-  community_testing:
-    - "Create test branch for evaluation"
-    - "Invite other branches to experiment"
-    - "Collect feedback over test period"
-    - "Monitor for unintended consequences"
-
+    - "Check alignment with principles"
+    - "Detect breaking changes and migration needs"
+  evidence:
+    - "Collect usage metrics and failure cases"
+    - "Survey branch participants"
+  cross_testing:
+    - "Create temporary evaluation branch"
+    - "Invite other branches to trial"
   integration:
-    - "If approved: Plan merge strategy"
-    - "Create attribution documentation"
-    - "Update changelog with credits"
-    - "Notify all DAHAOs of new capability"
-
-mcp_integrations:
-  - service: "github"
-    for: "Managing branches, PRs, and comparisons"
-  - service: "metrics-api"
-    for: "Collecting branch usage statistics"
-  - service: "openai"
-    for: "Analyzing innovation impact and compatibility"
-  - service: "notification-service"
-    for: "Cross-DAHAO communication"
+    - "If approved, draft merge plan and credits"
+    - "Update changelog and announce network-wide"
 
 evaluation_criteria:
-  - "Proven usage (minimum 30 days)"
-  - "No principle violations"
-  - "Positive community impact"
-  - "Technical compatibility"
+  - "≥14 days of branch usage"
+  - "No violations of immutable foundations"
+  - "Positive impact on clarity, safety, or velocity"
+  - "Low migration friction"
 
 outputs:
-  - type: "recommendation"
-    format: "adopt|adapt|decline"
+  - type: "recommendation"   # adopt|adapt|decline
   - type: "integration_plan"
-    format: "step_by_step_merge"
   - type: "attribution"
-    format: "credits_and_history"
-
-uses_terms:
-  - "@participant@1.0.0"
-  - "@governance@1.0.0"
-  - "@consensus@1.0.0"

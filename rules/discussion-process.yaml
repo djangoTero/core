@@ -1,64 +1,34 @@
-# rules/discussion-process.yaml
-# How dialectic discussions happen in DAHAO
+doc:
+  kind: "rule"
+  id: "discussion-process"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
 
-title: "Discussion Process Workflow"
+trigger: "A governance topic is marked for discussion"
 
-trigger: "When any governance topic needs @discussion"
+phases:
+  opening:
+    must:
+      - "Create public thread with scoped question and context"
+      - "Declare intended category (term/rule/principle/meta-rule)"
+  exploration:
+    must:
+      - "Invite explicit counter-arguments (dialectic)"
+      - "AI syntheses every 48h (summary + unresolved tensions)"
+  convergence:
+    must:
+      - "Propose candidate synthesis responding to objections"
+      - "Confirm readiness for vote (cooling period applies)"
+  conclusion:
+    must:
+      - "Publish final synthesis"
+      - "Link any resulting proposals"
 
-workflow:
-  initialize:
-    - "Create GitHub Discussion in appropriate category"
-    - "Tag with discussion type: [General], [Proposal], [Concern]"
-    - "Set initial context and question"
+guardrails:
+  quorum_visibility: true
+  code_of_conduct: "Good-faith participation; no dominance; moderator may re-scope"
 
-  facilitate:
-    - "Ensure thesis is clearly stated"
-    - "Invite antithesis (counter-arguments)"
-    - "AI agents identify unaddressed points"
-    - "Highlight emerging synthesis"
-
-  moderate:
-    - "Check for #good-faith participation"
-    - "Flag off-topic digressions"
-    - "Ensure all @participants can contribute"
-    - "Prevent discussion monopolization"
-
-  synthesize:
-    - "AI periodically summarizes key points"
-    - "Identify areas of convergence"
-    - "Highlight unresolved tensions"
-    - "Suggest potential compromises"
-
-  conclude:
-    - "When natural end reached or time expires"
-    - "Generate final synthesis document"
-    - "Link to any resulting proposals"
-    - "Archive for future reference"
-
-mcp_integrations:
-  - service: "github"
-    for: "Managing discussion threads"
-  - service: "openai/claude"
-    for: "Generating summaries and identifying synthesis"
-
-discussion_categories:
-  - "Terms: Defining what things mean"
-  - "Principles: Exploring values"
-  - "Rules: How things should work"
-  - "Proposals: Specific changes"
-  - "Meta: DAHAO itself"
-
-quality_indicators:
-  - "Multiple perspectives represented"
-  - "Evidence and examples provided"
-  - "Respectful disagreement"
-  - "Movement toward synthesis"
-
-uses_terms:
-  - "@discussion@1.0.0"
-  - "@participant@1.0.0"
-  - "@consensus@1.0.0"
-
-uses_principles:
-  - "#dialectic-evolution"
-  - "#transparency"
+references:
+  principles: ["#dialectic-evolution", "#transparency"]
+  terms: ["discussion", "participant", "consensus"]
