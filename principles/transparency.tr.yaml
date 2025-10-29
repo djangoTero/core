@@ -1,0 +1,20 @@
+doc:
+  kind: "principle"
+  id: "transparency"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+statement: "Tüm yönetişim görünür ve doğrulanabilirdir."
+
+requirements:
+  - "Herkese açık tartışmalar ve oy sayımları"
+  - "Sürüm geçmişi ve değişiklik günlüğü olan eserler"
+  - "Teklif ve oylamalara ekli YZ eylem kayıtları (istemler, çıktılar, gerekçeler)"
+  - "Yayınlanmış çatal/dal grafiği"
+
+exceptions:
+  - id: "privacy"
+    rule: "Kişisel veriler korunur; içerik sansürlenir fakat sansür olayı kaydedilir"
+  - id: "security"
+    rule: "Zafiyet detayları tarihli özetle sorumlu biçimde açıklanır"

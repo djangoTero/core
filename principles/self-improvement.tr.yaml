@@ -1,0 +1,22 @@
+doc:
+  kind: "principle"
+  id: "self-improvement"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+statement: "DAHAO sürekli öğrenmeli, denemeli ve uyum sağlamalıdır."
+
+mechanisms:
+  retrospectives_every_days: 90
+  metrics_required: true
+  branch_experiments_encouraged: true
+  ai_pattern_analysis: true
+
+health_indicators:
+  healthy:
+    - "Aktif teklifler ve deneyler"
+    - "Dallar arası bilgi paylaşımı"
+  unhealthy:
+    - "30 gün içinde teklif yok"
+    - "Aktif deney yok"

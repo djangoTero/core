@@ -1,0 +1,29 @@
+term:
+  id: "consensus"
+  version: "1.0.0"
+  alias: "@consensus@1.0.0"
+
+definition: |
+  Şeffaf bir tartışma ve sayılan bir oylama sonrasında, yeter sayıya ve
+  kategoriye özgü eşiğe ulaşan kayıtlı uzlaşma durumudur.
+
+contexts:
+  core: "Eşikler dahao.yaml ve voting.yml dosyalarından alınır"
+  branch: "Dallar alternatif mekanizmalar tanımlayabilir; belgelendirilmeli ve sürümlenmelidir"
+  temporal: "Uzlaşma aynı açık süreçle yeniden gözden geçirilebilir"
+
+mechanisms:
+  - "simple_majority (>50%)"
+  - "super_majority (≥66%)"
+  - "no_objection (belgelenmiş, zaman sınırlı)"
+  - "ai_enhanced (insan onaylı yapay zekâ gerekçeleri dahil)"
+
+examples:
+  - "Tartışma süresini 10→7 güne ayarlamak için uzlaşma sağlandı"
+  - "Hızlı deneyler için itiraz yok sürecini kullanan dal uzlaşması"
+
+related_terms: ["governance", "discussion", "participant"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "İlk tanım"

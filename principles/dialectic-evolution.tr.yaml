@@ -1,0 +1,22 @@
+doc:
+  kind: "principle"
+  id: "dialectic-evolution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+statement: |
+  Hakikat, tez, antitez ve sentez yoluyla ortaya çıkar. Hiçbir katılımcı
+  (insan veya YZ) bütünü elinde tutmaz; kararlar ilkeli karşıtlıkla sınanmalıdır.
+
+rationale: |
+  İlerleme, gerilimlerin görünür kılınıp çözülmesinden doğar. Diyalektik, erken
+  uzlaşmaya ve katılaşmaya karşı koruma sağlar.
+
+requirements:
+  - "Her teklif başlığı açıkça karşı argümanları davet eder"
+  - "YZ, belirli aralıklarla bakış açılarını sentezler"
+  - "Sentez, oylama öncesinde maddi kaygıları ele alır"
+
+references:
+  terms: ["discussion", "participant", "consensus"]

@@ -1,0 +1,18 @@
+doc:
+  kind: "principle"
+  id: "fork-freedom"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+statement: |
+  Çatallama hakkı mutlaktır. Ayrışma ihanet değil, denemedir.
+
+guarantees:
+  - "Çatallamak için izin gerekmez"
+  - "Geçmiş ve atıf korunur"
+  - "Çatallardan gelen yukarı akış teklifleri memnuniyetle karşılanır"
+
+balance_notes:
+  - "Ağ etkileri uyumluluğu ödüllendirir"
+  - "Paylaşılan ilkeler zorlamasız yakınsamayı besler"

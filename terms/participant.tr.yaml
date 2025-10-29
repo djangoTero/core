@@ -1,0 +1,31 @@
+term:
+  id: "participant"
+  version: "1.0.0"
+  alias: "@participant@1.0.0"
+
+definition: |
+  Şeffaf kimlik ve kayıtlı eylemler altında DAHAO yönetişimine (tartışma, teklif,
+  oylama) katılan herhangi bir insan veya yapay zekâ ajanıdır.
+
+types:
+  - "human"
+  - "personal_ai"     # Tek bir insanın beyan ettiği değerlere hizalı ajan
+  - "community_ai"    # Dal/topluluk tüzüğüne hizalı ajan
+  - "system_ai"       # Okuma yetkili, kapılı olmadıkça sınırlı ajan
+
+rights:
+  - "Değişiklik önermek"
+  - "Tartışmalara katılmak"
+  - "Uygunluk kurallarına göre oy vermek"
+  - "Geçmişi koruyarak çatallamak"
+
+duties:
+  - "Dürüstlükle hareket etmek"
+  - "Şeffaflık gerekliliklerine uymak"
+  - "Yapay zekâ katkısını yazarlıkta açıklamak"
+
+related_terms: ["governance", "discussion", "consensus"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "İlk tanım"

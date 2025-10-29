@@ -1,0 +1,29 @@
+doc:
+  kind: "meta-rule"
+  id: "immutable-foundations"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+  authors: ["@genesis-community"]
+  summary: "DAHAO'nun pazarlık kabul etmeyen temeli; onları değiştirmek istiyorsan çatallamalısın."
+
+foundations:
+  - id: "fork-freedom"
+    statement: "Her katılımcı tam geçmiş ve atıf ile istediği anda çatallayabilir."
+  - id: "transparency"
+    statement: "Yönetişim eserleri (teklifler, tartışmalar, oylamalar, değişiklikler) kamuya açık denetlenebilir."
+  - id: "versioning"
+    statement: "Her değişiklik sürümlenir; tarih korunur; geri alma mümkündür."
+  - id: "no-eternal-rules-except-these"
+    statement: "Başka hiçbir kural kendisini değişmez kılamaz."
+
+enforcement:
+  social:
+    - "Topluluk normları ve inceleme"
+  technical:
+    - "Git geçmişinin değişmezliği"
+    - "Süreçlerin kamu denetimi"
+  recourse:
+    - "İhlal halinde anında çatallama hakkı"
+
+paradox_resolution: "Bu maddeler değiştirilemez; onları terk etmek yeni bir sistem yaratır, DAHAO'yu değil."

@@ -1,0 +1,20 @@
+term:
+  id: "governance"
+  version: "1.0.0"
+  alias: "@governance@1.0.0"
+
+definition: |
+  Karar almayı yönlendiren ve denetlenebilir metin ile sürümlenmiş değişiklikler
+  şeklinde uygulanan, kurallar, terimler ve ilkelerin evrilen sistemidir.
+
+contexts:
+  core: "Bu depo ve süreçleri"
+  branch: "Şeffaf ve sürümlü kalmak kaydıyla yerel varyasyonlar"
+  technical: "Süreçleri etkileyen kod/altyapı kararları"
+  philosophical: "Misyon, değerler ve ilke evrimi"
+
+related_terms: ["consensus", "discussion", "participant"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "İlk tanım"
