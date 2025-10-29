@@ -1,0 +1,34 @@
+doc:
+  kind: "rule"
+  id: "discussion-process"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+trigger: "Bir yönetişim konusu tartışma için işaretlendiğinde"
+
+phases:
+  opening:
+    must:
+      - "Kapsamlı soru ve bağlamla herkese açık konu aç"
+      - "Hedef kategoriyi belirt (terim/ kural/ ilke/ meta-kural)"
+  exploration:
+    must:
+      - "Açık karşı argüman daveti yap (diyalektik)"
+      - "YZ özetleri her 48 saatte bir (özet + çözümsüz gerilimler)"
+  convergence:
+    must:
+      - "İtirazlara yanıt veren aday sentezi öner"
+      - "Oylamaya hazır olduğunu teyit et (soğuma süresi uygulanır)"
+  conclusion:
+    must:
+      - "Nihai sentezi yayımla"
+      - "Ortaya çıkan tekliflere bağlantı ver"
+
+guardrails:
+  quorum_visibility: true
+  code_of_conduct: "Dürüst katılım; baskınlık yok; moderatör kapsamı yeniden belirleyebilir"
+
+references:
+  principles: ["#dialectic-evolution", "#transparency"]
+  terms: ["discussion", "participant", "consensus"]

@@ -1,0 +1,66 @@
+doc:
+  kind: "meta-rule"
+  id: "governance-evolution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+  authors: ["@genesis-community"]
+  uses_principles: ["#transparency", "#fork-freedom", "#self-improvement"]
+  summary: "Terimlerin, kuralların, ilkelerin ve meta-kuralların nasıl değişebileceğini tanımlar."
+
+process:
+  categories:
+    term:
+      minimal_discussion_days: 7
+      threshold: 0.60
+      versioning: "semver"
+      breaking_change: "major"
+    rule:
+      minimal_discussion_days: 10
+      threshold: 0.60
+      branch_testing_days: 14
+      rollback_grace_days: 7
+    principle:
+      minimal_discussion_days: 21
+      cooling_period_days: 7
+      threshold: 0.66
+      multi_branch_validation: true
+    meta_rule:
+      minimal_discussion_days: 30
+      cooling_period_days: 7
+      threshold: 0.75
+      ratification: "2+ aktif dal onayı"
+      implementation_delay_days: 14
+
+  workflow:
+    - step: "proposal"
+      must:
+        - "Hedef kategoriyi ve dosyaları belirle"
+        - "Diff, gerekçe ve etki analizini sun"
+        - "Sürüm artışı niyetini açıkla"
+    - step: "discussion"
+      must:
+        - "Kamu başlığını ≥ minimal_discussion_days süre açık tut"
+        - "Karşı argümanları davet et (diyalektik)"
+        - "Periyodik YZ özetleri yayımla"
+    - step: "testing"
+      when: "rule || principle"
+      must:
+        - "Gerekli süre boyunca dal/deney ortamında çalıştır"
+        - "Metrikleri ve başarısızlık vakalarını topla"
+    - step: "decision"
+      must:
+        - "Yeter sayıyı ve eşiği doğrula"
+        - "Oy dökümünü ve gerekçeleri paylaş"
+    - step: "implementation"
+      must:
+        - "Sürümlemeyi uygula"
+        - "Referansları güncelle"
+        - "Tüm dallara duyuru yap"
+        - "Gerekliyse geri alma penceresi planla"
+
+immutables:
+  - "Çatallama hakkı kaldırılamaz"
+  - "Yönetişim şeffaflığı şu unsurların kamu görünürlüğünün altına düşürülemez: teklifler, tartışmalar, oylamalar, değişiklik günlükleri"
+  - "Tüm yönetişim eserleri sürümlenmelidir"
+  - "Bu meta-kural yalnızca yukarıdaki meta_rule yolu ile değiştirilebilir"

@@ -1,0 +1,41 @@
+doc:
+  kind: "rule"
+  id: "proposal-process"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+trigger: "[Proposal] etiketi taşıyan başlık"
+
+steps:
+  - name: "intake"
+    must:
+      - "Eseri/eserleri ve kategoriyi tanımla"
+      - "Yapılandırılmış diff + gerekçe + etki sun"
+      - "Önerilen sürüm artışını bildir"
+  - name: "conflict-scan"
+    must:
+      - "Önceki teklifleri ara"
+      - "Çakışan kural/terimleri tespit et"
+  - name: "validation"
+    must:
+      - "Değiştirilemez temelleri kontrol et"
+      - "İlkelerle hizayı denetle"
+  - name: "discussion"
+    must:
+      - "Kategoriye göre asgari gün kadar açık tut (bkz. meta-kural)"
+      - "YZ özetleri yayımla"
+  - name: "decision"
+    must:
+      - "Yeter sayıyı ve eşiği doğrula"
+      - "Oy dökümünü ve gerekçeleri paylaş"
+  - name: "implementation"
+    must:
+      - "Değişiklikleri birleştir"
+      - "Sürümü etiketle"
+      - "Değişiklik günlüklerini ve site sayfalarını güncelle (misyon/nasıl-çalışır vb.)"
+
+outputs:
+  - "approved|rejected|revise"
+  - "pull_request_url"
+  - "markdown_summary"

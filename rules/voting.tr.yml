@@ -1,0 +1,39 @@
+doc:
+  kind: "rule"
+  id: "voting-and-consensus"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+when: "Tartışma dönemi biter ve varsa soğuma süresi tamamlanır"
+
+eligibility:
+  participants: "Düzgün durumda kayıtlı tüm katılımcılar"
+  quorum_min: 0.30
+
+counting:
+  methods:
+    human_explicit: true          # Açık Evet/Hayır/Çekimser
+    ai_assist_rationale: true     # YZ oyları mümkündür ama gerekçe içermeli; insan kapılı
+  abstentions_ignore_denominator: false
+
+thresholds:
+  term_change: 0.60
+  rule_change: 0.60
+  principle_change: 0.66
+  meta_rule_change: 0.75
+  emergency_change: 0.80
+
+periods:
+  default_days: 3
+  emergency_days: 2
+
+reporting:
+  publish_breakdown: true
+  include_rationales: true
+  archive_publicly: true
+
+outcomes:
+  tie: "no_change"
+  pass: "implement"
+  fail: "archive_or_revise"

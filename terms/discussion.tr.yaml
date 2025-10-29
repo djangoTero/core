@@ -1,0 +1,22 @@
+term:
+  id: "discussion"
+  version: "1.0.0"
+  alias: "@discussion@1.0.0"
+
+definition: |
+  Tez, antitez ve sentez yoluyla bir yönetişim değişikliğini araştıran
+  yapılandırılmış, süre sınırlı ve herkese açık diyalog.
+
+phases: ["opening", "exploration", "convergence", "conclusion"]
+
+requirements:
+  - "Açık kapsam ve soru"
+  - "Herkese açık görünürlük"
+  - "Belirli aralıklarla yapay zekâ özetleri"
+  - "Tekliflere bağlantılı, indekslenmiş çıktı"
+
+related_terms: ["participant", "consensus", "governance"]
+changelog:
+  - version: "1.0.0"
+    date: "2025-09-10"
+    change: "İlk tanım"

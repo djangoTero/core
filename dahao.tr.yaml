@@ -1,0 +1,75 @@
+# DAHAO manifestosu - bu yapının DAHAO uyumlu bir yönetişim sistemi olduğunu ilan eder
+
+dahao:
+  spec: "1.0"
+  name: "DAHAO Çekirdek"
+  shortname: "dahao-core-tr"
+  type: "core"        # çekirdek | dal | çatal
+  parent: null         # çekirdeğin üstü yoktur
+
+  description: |
+    DAHAO Çekirdek, insan–yapay zekâ işbirliği için asgari, denetlenebilir
+    yönetişim çekirdeğidir. Dosya-yerli, çatal-dostudur ve sürümlenmiş etiği
+    uygular. Nihai yetki insanlarda kalır; yapay zekâ yardımcı olabilir ancak
+    açık, kayıtlı onay olmadan değişiklik yapamaz.
+
+  links:
+    mission: "https://www.dahao.xyz/mission"
+    how_it_works: "https://www.dahao.xyz/how-it-works"
+    versioned_ethics: "https://www.dahao.xyz/versioned-ethics"
+    economics: "https://www.dahao.xyz/economics"
+    repo: "https://github.com/dahao-org/dahao-core"
+    discussions: "https://github.com/dahao-org/dahao-core/discussions"
+
+  content_license: "CC-BY-SA-4.0"
+  code_license: "MIT"
+
+  paths:
+    terms: "./terms"
+    principles: "./principles"
+    rules: "./rules"
+    meta_rules: "./meta-rules"
+
+  features:
+    file_native: true
+    ai_assist_allowed: true          # Yapay zekâ analiz/özetleyebilir; uygulayamaz
+    human_gate_required: true        # Değişiklikler için insan onayı gerekir
+    mcp_compatible: true
+    git_native: true
+
+  governance_defaults:
+    discussion_min_days: 7
+    voting_min_days: 3
+    quorum_min: 0.30                 # en az %30 yetkili katılımcı
+    thresholds:
+      term_change: 0.60
+      rule_change: 0.60
+      principle_change: 0.66
+      meta_rule_change: 0.75
+      emergency_change: 0.80
+    tie_breaker: "no_change"         # eşitlik durumunda mevcut durum korunur
+    cooling_period_days: 2           # tartışma bitişi ile oylama başlangıcı arası
+
+  versioning:
+    scheme: "semver"                 # major.minor.patch
+    tag_prefix: "v"
+    breaking_change_policy: "Yalnızca majör sürüm artışı"
+    changelog_required: true
+
+  principles_commitment:
+    - "#transparency"
+    - "#fork-freedom"
+    - "#dialectic-evolution"
+    - "#self-improvement"
+
+  audit:
+    record_ai_usage: true
+    public_vote_records: true
+    public_discussion_index: true
+
+  bootstrap:
+    created: "2025-09-10"
+    authors:
+      - "@genesis-community"
+    initial_consensus_threshold: 0.60
+    initial_process_note: "İlk meta-kural revizyonuna kadar yukarıdaki varsayılanlar geçerlidir."

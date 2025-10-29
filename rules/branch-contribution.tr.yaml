@@ -1,0 +1,41 @@
+doc:
+  kind: "rule"
+  id: "branch-innovation-contribution"
+  version: "1.0.0"
+  status: "active"
+  created: "2025-09-10"
+
+trigger: "Bir dal [Upstream-Proposal] tartışması açtığında"
+
+actors:
+  - "branch_maintainers"
+  - "core_reviewers"
+  - "ai_assistants"
+
+workflow:
+  research:
+    - "Dal yönetişimini çekirdekle karşılaştır ve farklarını çıkar"
+    - "Yeni mekanizmaları ve ampirik sonuçları belirle"
+  validate:
+    - "İlkelerle hizayı kontrol et"
+    - "Yıkıcı değişiklikleri ve geçiş gereksinimlerini tespit et"
+  evidence:
+    - "Kullanım metriklerini ve başarısızlık vakalarını topla"
+    - "Dal katılımcılarına anket yap"
+  cross_testing:
+    - "Geçici bir değerlendirme dalı oluştur"
+    - "Diğer dalları denemeye davet et"
+  integration:
+    - "Onaylanırsa birleşme planı ve kredi taslağı hazırla"
+    - "Değişiklik günlüğünü güncelle ve ağı duyur"
+
+evaluation_criteria:
+  - ">=14 günlük dal kullanımı"
+  - "Değiştirilemez temellerin ihlali yok"
+  - "Açıklık, güvenlik veya hız üzerinde olumlu etki"
+  - "Düşük geçiş sürtünmesi"
+
+outputs:
+  - type: "recommendation"   # adopt|adapt|decline
+  - type: "integration_plan"
+  - type: "attribution"
